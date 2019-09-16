@@ -1,5 +1,5 @@
 ﻿#!/bin/sh
-
+uaac target http://localhost:8080/uaa
 uaac token client get admin -s adminsecret
 uaac client add dataflow \
   --name dataflow \
