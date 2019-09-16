@@ -1,0 +1,25 @@
+﻿spring:
+  cloud:
+    dataflow:
+      security:
+        authorization:
+          map-oauth-scopes: true
+          role-mappings:
+            ROLE_CREATE: foo.create
+            ROLE_DEPLOY: foo.create
+            ROLE_DESTROY: foo.create
+            ROLE_MANAGE: foo.create
+            ROLE_MODIFY: foo.create
+            ROLE_SCHEDULE: foo.create
+            ROLE_VIEW: foo.view
+security:
+  oauth2:
+    client:
+      client-id: dataflow
+      client-secret: dataflow
+      scope: openid,foo.create,foo.view
+      access-token-uri: http://dataflow.local:8080/uaa/oauth/token
+      user-authorization-uri: http://dataflow.local:8080/uaa/oauth/authorize
+    resource:
+      user-info-uri: http://dataflow.local:8080/uaa/userinfo
+      token-info-uri: http://dataflow.local:8080/uaa/check_token
