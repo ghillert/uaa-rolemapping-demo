@@ -5,7 +5,7 @@ uaac client add dataflow \
   --name dataflow \
   --scope cloud_controller.read,cloud_controller.write,openid,password.write,scim.userids,foo.create,foo.view \
   --authorized_grant_types password,authorization_code,client_credentials,refresh_token \
-  --authorities uaa.resource,dataflow.create,dataflow.deploy,dataflow.destroy,dataflow.manage,dataflow.modify,dataflow.schedule,dataflow.view\
+  --authorities uaa.resource,dataflow.create,dataflow.deploy,dataflow.destroy,dataflow.manage,dataflow.modify,dataflow.schedule,dataflow.view,foo.view,foo.create\
   --redirect_uri http://localhost:9393/login \
   --autoapprove openid \
   --secret dataflow \
